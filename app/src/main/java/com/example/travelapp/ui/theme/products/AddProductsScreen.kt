@@ -31,6 +31,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.travelapp.data.productviewmodel
 import com.example.travelapp.navigation.ROUTE_VIEW_PRODUCT
+import com.example.travelapp.ui.theme.TravelAppTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -103,7 +104,10 @@ fun AddProductsScreen(navController: NavHostController) {
 
 @Preview
 @Composable
-fun Addpr() {
-    AddProductsScreen(rememberNavController())
+fun AddProductsScreenPreview() {
+TravelAppTheme {
+    AddProductsScreen(navController = rememberNavController())
+}
+
 
 }
