@@ -20,14 +20,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.travelapp.R
 import com.example.travelapp.navigation.ROUTE_HOME
+import com.example.travelapp.navigation.ROUTE_PLACE
 
 @Composable
 
 fun HomeScreen(navController: NavHostController) {
     Column(modifier = Modifier
         .fillMaxSize(Float.MAX_VALUE)
-        .background(color = Color.Green),
+        .background(color = Color.Gray),
         horizontalAlignment = Alignment.Start
     ) {
     }
@@ -35,10 +37,10 @@ fun HomeScreen(navController: NavHostController) {
     
     androidx.compose.material3.Text(text = "WELCOME TO THE TRAVEL APP",
     color = Color.Black,
-    fontSize = 30.sp,
+    fontSize = 40.sp,
     fontFamily = androidx.compose.ui.text.font.FontFamily.Cursive)
     Button(onClick = {
-        navController.navigate(ROUTE_HOME)
+        navController.navigate(ROUTE_PLACE)
     }) {
 
         
@@ -47,8 +49,8 @@ fun HomeScreen(navController: NavHostController) {
 
 
     Row {
-        Image(painter = painterResource(id = com.example.travelapp.R.drawable.villa), contentDescription = "",
-            modifier=Modifier.size(width = 200.dp, height = 150.dp))
+        Image(painter = painterResource(id = R.drawable.villa), contentDescription = "",
+            modifier=Modifier.size(width = 400.dp, height = 800.dp))
 
 
 
@@ -63,7 +65,7 @@ fun HomeScreen(navController: NavHostController) {
 
 @Preview
 @Composable
-fun home() {
-    home()
+fun homePreview() {
+    HomeScreen(rememberNavController())
     
 }
